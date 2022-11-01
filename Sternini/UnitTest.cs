@@ -1,13 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using NUnit.Framework;
 using System.Linq;
 
 namespace OOP_csharp
 {
-    [TestClass]
-    internal class UnitTest
+    [TestFixture]
+    public class UnitTest
     {
-        [TestMethod]
+        [Test]
         public void TestExample()
         {
             IEntity entity = new Entity();
