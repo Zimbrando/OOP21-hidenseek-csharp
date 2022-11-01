@@ -5,12 +5,13 @@ using System.Linq;
 namespace OOP_csharp
 {
     [TestClass]
-    class UnitTest
+    internal class UnitTest
     {
         [TestMethod]
         public void TestExample()
         {
-            Assert.AreEqual(false, true);
+            IEntity entity = new Entity();
+            Assert.AreEqual(0, entity.GetComponents().Count());
         }
     }
 }
