@@ -6,20 +6,31 @@ namespace OOP_csharp
 {
     class LifeComponent : AbstractComponent, ILifeComponent
     {
-        public int MaxHealth { get; }
-        public int Health { get; private set; }
+        private int _health;
+        private readonly int _maxHealth;
+
+        public int Health
+        {
+            get => _health;
+            private set => _health = value;
+        }
+
+        public int MaxHealth
+        {
+            get => _maxHealth;
+        }
 
         public LifeComponent(int maxHealth)
         {
-            MaxHealth = maxHealth;
-            Health = maxHealth;
+            _maxHealth = maxHealth;
+            _health = maxHealth;
         }
 
-        public void Hurt(int damage) => Health -= damage;
+        public void Hurt(int damage) => _health -= damage;
 
         public bool IsAlive()
         {
-            return Health > 0;
+            return _health > 0;
         }
 
     }
