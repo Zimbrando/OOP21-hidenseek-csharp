@@ -7,7 +7,6 @@ namespace Vuksan.Model
 {
     interface ISceneManager
     {
- 
         void AddScreenController(String name, IMenuController controller);
 
         void RemoveScreenController(String name);
