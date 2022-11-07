@@ -11,7 +11,8 @@ namespace OOP_csharp
             get;
         }
 
-        public int Health {
+        public int Health 
+        {
             get; 
         }
 
