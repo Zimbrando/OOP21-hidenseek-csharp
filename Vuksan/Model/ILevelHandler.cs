@@ -12,6 +12,7 @@ namespace Vuksan.Model
 
         void Reset();
 
-        IGameLevel GetCurrentLevel();
+#nullable enable
+        IGameLevel? GetCurrentLevel();
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Vuksan.Controller
 {
-    class MainMenuController : IMenuController
+    class GameOverMenuController : IMenuController
     {
         private double _interfaceHeight;
 

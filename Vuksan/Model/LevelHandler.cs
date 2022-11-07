@@ -23,7 +23,8 @@ namespace Vuksan.Model
 
         public void Reset() => _currentLevel = 1;
 
-        public IGameLevel GetCurrentLevel()
+#nullable enable
+        public IGameLevel? GetCurrentLevel()
         {
             if (_currentLevel > _gameLevels.Count)
             {
