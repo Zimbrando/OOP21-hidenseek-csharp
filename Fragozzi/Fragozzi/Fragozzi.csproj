@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.13.3\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.13.3\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEB1388C-AE4E-4A66-937B-9AB060907255}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Fragozzi</RootNamespace>
+    <AssemblyName>Fragozzi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Components\Physics\PositionComponent.cs" />
+    <Compile Include="Model\Components\Physics\MoveComponent.cs" />
+    <Compile Include="Model\IUpgradableComponent.cs" />
+    <Compile Include="Model\Components\Physics\Force.cs" />
+    <Compile Include="Model\Components\Physics\CollisionComponent.cs" />
+    <Compile Include="Model\Components\Physics\Hitbox.cs" />
+    <Compile Include="Model\Components\Physics\IHitbox.cs" />
+    <Compile Include="Model\Components\Physics\IForce.cs" />
+    <Compile Include="Model\Components\Physics\ICollisionComponent.cs" />
+    <Compile Include="Model\Components\Physics\MaterialComponent.cs" />
+    <Compile Include="Model\Components\Physics\IMaterialComponent.cs" />
+    <Compile Include="Model\Components\Physics\IMoveComponent.cs" />
+    <Compile Include="Model\Components\Physics\IPositionComponent.cs" />
+    <Compile Include="Model\Components\Physics\Segment.cs" />
+    <Compile Include="Model\Entities\IEntity.cs" />
+    <Compile Include="Model\Component.cs" />
+    <Compile Include="Model\IComponent.cs" />
+    <Compile Include="Model\Components\Physics\ISegment.cs" />
+    <Compile Include="Model\Statistics\Time\Time.cs" />
+    <Compile Include="Model\Statistics\Time\TimeStatistic.cs" />
+    <Compile Include="Model\Statistics\Score\Score.cs" />
+    <Compile Include="Model\Statistics\Score\ScoreStatistic.cs" />
+    <Compile Include="Model\Statistics\Numeric\NumericStatistic.cs" />
+    <Compile Include="Model\Statistics\Numeric\Numeric.cs" />
+    <Compile Include="Model\Statistics\Statistic.cs" />
+    <Compile Include="Model\Statistics\IStatisticProperty.cs" />
+    <Compile Include="Model\Statistics\IStatistic.cs" />
+    <Compile Include="UnitTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.13.3.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.13.3\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Questo progetto fa riferimento a uno o più pacchetti NuGet che non sono presenti in questo computer. Usare lo strumento di ripristino dei pacchetti NuGet per scaricarli. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkID=322105. Il file mancante è {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.13.3\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.3\build\NUnit.props'))" />
+  </Target>
+</Project>
