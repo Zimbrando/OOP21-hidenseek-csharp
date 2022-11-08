@@ -7,6 +7,13 @@ namespace OOP_csharp.Components
 {
     abstract class AbstractComponent : IComponent
     {
+        private IEntity _owner;
+
+        public AbstractComponent()
+        {
+            _owner = null;
+        }
+
         public void Attach(IEntity e)
         {
         }
@@ -17,9 +24,10 @@ namespace OOP_csharp.Components
 
         public IEntity Owner
         {
-            get => null;
+            get => _owner;
             set
             {
+                _owner = value;
             }
         }
     }
